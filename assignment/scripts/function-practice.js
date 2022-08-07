@@ -26,7 +26,7 @@ function addNumbers(firstNumber, secondNumber) {
   return firstNumber + secondNumber;
 };
 
-console.log('Test- should return the sum of provided numbers:', addNumbers(7,8));
+console.log('Test- should return the sum of provided numbers 7 + 8 = 15:', addNumbers(7,8));
 
 
 // 4. Function to multiply three numbers & return the result
@@ -34,15 +34,14 @@ function multiplyThree(firstNum, secondNum, thirdNum) {
   return firstNum * secondNum * thirdNum;
 };
 
-console.log('Test - should return the 3 numbers multiplied:', multiplyThree(3,4,5));
+console.log('Test - should return the 3 numbers multiplied 3*4*5 = 60:', multiplyThree(3,4,5));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
-  if (number > 0){
+  if (number > 0) {
     return true;
-  }
-  else{
+  } else {
     return false;
   }
 };
@@ -78,7 +77,7 @@ function find( value, array ) {
     }
   }
   return false;
-}
+};
 
 console.log('Test - should return false', find(5, [1, 2, 3, 4]));
 console.log('Test - should return true', find(('B'), ['A', 'B', 'C', 'D']));
@@ -93,7 +92,7 @@ function isFirstLetter(letter, string) {
     return true;
   }
   return false;
-}
+};
 
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
@@ -116,10 +115,10 @@ console.log('Test- should return 0', sumAll([]));
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
-function keepItPos(array){
+function keepItPos(array) {
   let newArr = [];
   for (let num of array) {
-    if (num > 0){
+    if (num > 0) {
       newArr.push(num);
     }
   }
@@ -129,7 +128,7 @@ let test = [1, 2, 3];
 console.log('Test - should return []', keepItPos([-1, 0, -5]));
 console.log('Test - should return [7, 2]', keepItPos([-1, 7, 2]));
 console.log('Test - should return [1]', keepItPos([1, 0, -5]));
-console.log('Test - should return [1, 2, 3]', keepItPos(test), test);
+console.log('Test - should return [1, 2, 3]', keepItPos(test), test); //check if starting array was changed
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
@@ -170,7 +169,7 @@ function towerBuilder(nFloors) {
     //RegEx wasn't my first choice, but this is fairly straightforward:
     //Match the first asterisk not followed by another (so the last one) and replace with a space
     tower.unshift(tStr); //push to the front of the array (since we are decrementing)
-    console.log(tower)
+    //console.log(tower)
   }
   return tower; // return the finished arr after the loop finishes
 }
