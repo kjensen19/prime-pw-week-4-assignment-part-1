@@ -134,3 +134,48 @@ console.log('Test - should return [1, 2, 3]', keepItPos(test), test);
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Build Tower
+// Build a pyramid-shaped tower given a positive integer number of floors. A tower block is represented with "*" character.
+
+// For example, a tower with 3 floors looks like this:
+
+// [
+//   "  *  ",
+//   " *** ", 
+//   "*****"
+// ]
+// And a tower with 6 floors looks like this:
+
+// [
+//   "     *     ", 
+//   "    ***    ", 
+//   "   *****   ", 
+//   "  *******  ", 
+//   " ********* ", 
+//   "***********"
+// ]
+
+
+
+function towerBuilder(nFloors) {
+  let tower = []; // arr to push to and then return
+  let tStr = '*'.repeat(nFloors + nFloors - 1) //var set to max *s for the row
+  //loop through starting with last (biggest) entry
+  for (let i=nFloors; i>0; i--) {
+    if (i !== nFloors) { //if it isn't the first iteration
+      tStr = tStr.replace('*', ' ') //replace the first asterisk with a space
+      tStr = tStr.replace(/\*(?!\*)/, " ")
+    }
+    //RegEx wasn't my first choice, but this is fairly straightforward:
+    //Match the first asterisk not followed by another (so the last one) and replace with a space
+    tower.unshift(tStr); //push to the front of the array (since we are decrementing)
+    console.log(tower)
+  }
+  return tower; // return the finished arr after the loop finishes
+}
+
+//TEST
+//Should return patterns above in the setup
+console.log(towerBuilder(3));
+console.log(towerBuilder(6));
